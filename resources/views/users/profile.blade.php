@@ -345,7 +345,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- END PROFILE CONTENT -->
                         </div>
                     </div>
                     <!-- END PAGE BASE CONTENT -->

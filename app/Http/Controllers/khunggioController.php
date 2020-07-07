@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\khunggio;
 use App\benhvien;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class khunggioController extends Controller
 {

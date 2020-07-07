@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\chuyenkhoa;
 use App\benhvien;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class chuyenkhoaController extends Controller
 {

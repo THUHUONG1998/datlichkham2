@@ -60,6 +60,8 @@
                                         <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
                                         <button class="btn btn-danger"  data-toggle="modal" data-target="#import">Import</button>
                                         <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
+                                        <button class="btn btn-warning"  data-toggle="modal" data-target="#export">Export</button>
+
                                     </div>
                                 </div>
                             </div>
@@ -133,5 +135,24 @@
                     </form>
                 </div>
             </div>
-        </div>       
+        </div>
+        <!-- modal-export -->
+        <div class="modal modal-danger fade" id="export" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+                        <h4 class="modal-title text-center" id="myModalLabel">Thông báo</h4>
+                    </div>
+                    <form action="{{route('export')}}" method="GET" enctype="multipart/form-data">
+                    {{csrf_field()}}
+                        <input type="date" name="start-date" class="form-control">
+                        <input type="date" name="end-date" class="form-control">
+                        <div class="modal-footer">
+                            <button class="btn btn-success">Export User Data</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 @endsection

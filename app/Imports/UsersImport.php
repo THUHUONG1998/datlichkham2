@@ -5,6 +5,8 @@ namespace App\Imports;
 use App\User;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Imports\HeadingRowFormatter;
+HeadingRowFormatter::default('none');
 class UsersImport implements ToModel
 {
     /**
@@ -25,5 +27,10 @@ class UsersImport implements ToModel
             'password' => Hash::make($row[4]),
             'gioitinh'   => $row[5],
         ]);
+        
+    }
+    public function headingRow(): int
+    {
+        return 6;
     }
 }

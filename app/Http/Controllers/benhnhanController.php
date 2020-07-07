@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Validator;
 use App\benhnhan;
 use Auth;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class benhnhanController extends Controller
 {
