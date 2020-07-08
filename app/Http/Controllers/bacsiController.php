@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\bacsi;
+use App\benhvien;
 use Illuminate\Support\Facades\DB;
+use App\chuyenkhoa;
 
 class bacsiController extends Controller
 {
     public function index(Request $request)
     {
         // code phan trang
+        $benhviens = benhvien::orderBy('id', 'ASC')->get();
         $bacsi = bacsi::orderBy('id','ASC')->paginate(5);
-        return view('bacsi.index',compact('bacsi'))
+        return view('bacsi.index',compact('bacsi', 'benhviens'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
     public function create()
@@ -20,6 +23,14 @@ class bacsiController extends Controller
         $benhvien = DB::table('benhvien')->get();
         $chuyenkhoa = DB::table('chuyenkhoa')->get();
         return view('bacsi.create',compact('bacsi','benhvien','chuyenkhoa'));
+    }
+    public function showChuyenKhoainBenhVien(Request $request)
+    {
+        if ($request->ajax()) {
+			$chuyenkhoa = chuyenkhoa::where('id_benhvien', $request->id_benhvien)->select('id', 'tenchuyenkhoa')->get();
+
+			return response()->json($chuyenkhoa);
+		}
     }
     public function store(Request $request)
     {

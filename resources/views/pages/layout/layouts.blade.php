@@ -160,6 +160,29 @@
       modal.find('.modal-body #benhnhan_id').val(benhnhan_id);
   })
 </script>
+<script type="text/javascript">
+    var url = "{{route('show-chuyenkhoa')}}";
+    $("select[name='id_benhvien']").change(function(){
+        var id_benhvien = $(this).val();
+        var token = $("input[name='_token']").val();
+        $.ajax({
+            url: url,
+            method: 'POST',
+            data: {
+                id_benhvien: id_benhvien,
+                _token: token
+            },
+            success: function(data) {
+                $("select[name='id_chuyenkhoa'").html('');
+                $.each(data, function(key, value){
+                    $("select[name='id_chuyenkhoa']").append(
+                        "<option value=" + value.id + ">" + value.tenchuyenkhoa + "</option>"
+                    );
+                });
+            }
+        });
+    });
+</script>
   @show
 </body>
 </html>

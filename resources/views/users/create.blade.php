@@ -53,6 +53,9 @@
                  <div class="form-group">
                     <label for="exampleName">User Name</label>
                     <input type="text" class="form-control" id="username" placeholder="UserName" name="username" value="{{old('username')}}">
+                    @error('username')
+                        <p style="color: red;"><i><b>{{$message}}</b></i></p>
+                    @enderror
                   </div>
                   <div class="form-group">
                     <label for="exampleName">Full Name</label>

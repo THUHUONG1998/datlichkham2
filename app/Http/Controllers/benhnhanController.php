@@ -7,6 +7,7 @@ use Validator;
 use App\benhnhan;
 use Auth;
 use Illuminate\Support\Facades\DB;
+use App\chuyenkhoa;
 
 class benhnhanController extends Controller
 {
@@ -36,7 +37,14 @@ class benhnhanController extends Controller
         $khunggio=DB::table('khunggio')->get();
         return view('benhnhan.create',compact('benhvien','bacsi','chuyenkhoa','data','khunggio'));
     }
+    public function showChuyenKhoainBenhNhan(Request $request)
+    {
+        if ($request->ajax()) {
+			$chuyenkhoa = chuyenkhoa::where('id_benhvien', $request->id_benhvien)->select('id', 'tenchuyenkhoa')->get();
 
+			return response()->json($chuyenkhoa);
+		}
+    }
     /**
      * Store a newly created resource in storage.
      *

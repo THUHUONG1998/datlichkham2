@@ -40,8 +40,10 @@ Route::group(['prefix'=>'admin'], function() {
         Route::post('cropie', 'UsersController@uploadImage')->name('croppie');
         Route::get('changePassword', 'HomeController@changePassword')->name('changePassword');
         Route::get('export', 'MyController@export')->name('export');
+        Route::get('export-bacsi', 'MyController@exportBS')->name('exportBS');
         Route::get('importExportView', 'MyController@importExportView');
         Route::post('import', 'MyController@import')->name('import');
+        Route::post('showchuyenkhoa','bacsiController@showChuyenKhoainBenhVien')->name('show-chuyenkhoa');
     });
     
 });
