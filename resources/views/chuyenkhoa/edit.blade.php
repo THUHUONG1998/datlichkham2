@@ -1,6 +1,7 @@
 @extends('pages.layout.layouts')
-
-
+@section('title')
+Chỉnh sửa thông tin chuyên khoa
+@endsection
 @section('content')
 <div class="page-content-wrapper">
 <!-- BEGIN CONTENT BODY -->

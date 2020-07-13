@@ -10,6 +10,13 @@ use App\chuyenkhoa;
 
 class bacsiController extends Controller
 {
+    //    function __construct()
+    // {
+    //      $this->middleware('permission:bs-list|bs-create|bs-edit|bs-delete', ['only' => ['index','store']]);
+    //      $this->middleware('permission:bs-create', ['only' => ['create','store']]);
+    //      $this->middleware('permission:bs-edit', ['only' => ['edit','update']]);
+    //      $this->middleware('permission:bs-delete', ['only' => ['destroy']]);
+    // }
     public function index(Request $request)
     {
         // code phan trang
@@ -27,10 +34,9 @@ class bacsiController extends Controller
     public function showChuyenKhoainBenhVien(Request $request)
     {
         if ($request->ajax()) {
-			$chuyenkhoa = chuyenkhoa::where('id_benhvien', $request->id_benhvien)->select('id', 'tenchuyenkhoa')->get();
-
-			return response()->json($chuyenkhoa);
-		}
+            $chuyenkhoa = chuyenkhoa::where('id_benhvien', $request->id_benhvien)->select('id', 'tenchuyenkhoa')->get();
+            return response()->json($chuyenkhoa);
+        }
     }
     public function store(Request $request)
     {
@@ -38,6 +44,7 @@ class bacsiController extends Controller
         // code lay du lieu vao database
         $this->validate($request, [
             'tenbacsi' => 'required',
+            'hocvi' => 'required',
             'id_benhvien' => 'required',
             'id_chuyenkhoa' => 'required',
         ],
@@ -48,6 +55,9 @@ class bacsiController extends Controller
 
         [
             'tenbacsi' => 'Tên Bác Sĩ',
+            'hocvi' =>'Học vị',
+            'id_benhvien' => 'Tên bệnh viện',
+            'id_chuyenkhoa' => 'Tên chuyên khoa',
         ]);
 
         
@@ -73,6 +83,17 @@ class bacsiController extends Controller
             'hocvi'=>'required',
             'id_benhvien' => 'required',
             'id_chuyenkhoa' => 'required',
+        ],
+
+        [
+            'required' => ':attribute không được bỏ trống'
+        ],
+
+        [
+            'tenbacsi' => 'Tên Bác Sĩ',
+            'hocvi' => 'Học vị',
+            'id_benhvien' => 'Tên bệnh viện',
+            'id_chuyenkhoa' => 'Tên chuyên khoa',
         ]);
             
         $bacsi = bacsi::find($id);

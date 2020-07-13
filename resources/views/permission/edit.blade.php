@@ -1,5 +1,7 @@
 @extends('pages.layout.layouts')
-
+@section('title')
+Chỉnh sửa thông tin Permission
+@endsection
 <link rel="stylesheet" href="../css/customer.css">
 @section('content')
 <div class="page-content-wrapper">

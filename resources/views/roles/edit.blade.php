@@ -1,6 +1,7 @@
 @extends('pages.layout.layouts')
-
-
+@section('title')
+Chỉnh sửa thông tin role 
+@endsection
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">

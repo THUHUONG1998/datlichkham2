@@ -3,142 +3,28 @@
     <div class="page-sidebar navbar-collapse collapse">
         <ul class="page-sidebar-menu   " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
             <li class="heading">
-                <h3 class="uppercase">Features</h3>
+                <h3 class="uppercase"></h3>
             </li>
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-diamond"></i>
-                    <span class="title">UI Features</span>
+                    <span class="title">Admin</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="{{route('users.index')}}" class="nav-link ">
+                            <span class="title">User</span>
+                        </a>
+                    </li>
                     <li class="nav-item  ">
                         <a href="{{route('roles.index')}}" class="nav-link ">
                             <span class="title">Roles</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="ui_general.html" class="nav-link ">
-                            <span class="title">General Components</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_buttons.html" class="nav-link ">
-                            <span class="title">Buttons</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_confirmations.html" class="nav-link ">
-                            <span class="title">Popover Confirmations</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_icons.html" class="nav-link ">
-                            <span class="title">Font Icons</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_socicons.html" class="nav-link ">
-                            <span class="title">Social Icons</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_typography.html" class="nav-link ">
-                            <span class="title">Typography</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_tabs_accordions_navs.html" class="nav-link ">
-                            <span class="title">Tabs, Accordions & Navs</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_timeline.html" class="nav-link ">
-                            <span class="title">Timeline</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_tree.html" class="nav-link ">
-                            <span class="title">Tree View</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="javascript:;" class="nav-link nav-toggle">
-                            <span class="title">Page Progress Bar</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item ">
-                                <a href="ui_page_progress_style_1.html" class="nav-link "> Flash </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="ui_page_progress_style_2.html" class="nav-link "> Big Counter </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_blockui.html" class="nav-link ">
-                            <span class="title">Block UI</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_bootstrap_growl.html" class="nav-link ">
-                            <span class="title">Bootstrap Growl Notifications</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_notific8.html" class="nav-link ">
-                            <span class="title">Notific8 Notifications</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_toastr.html" class="nav-link ">
-                            <span class="title">Toastr Notifications</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_bootbox.html" class="nav-link ">
-                            <span class="title">Bootbox Dialogs</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_alerts_api.html" class="nav-link ">
-                            <span class="title">Metronic Alerts API</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_session_timeout.html" class="nav-link ">
-                            <span class="title">Session Timeout</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_idle_timeout.html" class="nav-link ">
-                            <span class="title">User Idle Timeout</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_modals.html" class="nav-link ">
-                            <span class="title">Modals</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_extended_modals.html" class="nav-link ">
-                            <span class="title">Extended Modals</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_tiles.html" class="nav-link ">
-                            <span class="title">Tiles</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_datepaginator.html" class="nav-link ">
-                            <span class="title">Date Paginator</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_nestable.html" class="nav-link ">
-                            <span class="title">Nestable List</span>
+                        <a href="{{route('permission.index')}}" class="nav-link ">
+                            <span class="title">Permissions</span>
                         </a>
                     </li>
                 </ul>
@@ -146,105 +32,19 @@
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-puzzle"></i>
-                    <span class="title">Components</span>
+                    <span class="title">Bệnh viện</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="components_date_time_pickers.html" class="nav-link ">
-                            <span class="title">Date & Time Pickers</span>
+                        <a href="{{route('benhvien.index')}}" class="nav-link ">
+                            <span class="title">Bảng bệnh viện</span>
+                            <span class="badge badge-danger"></span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="components_color_pickers.html" class="nav-link ">
-                            <span class="title">Color Pickers</span>
-                            <span class="badge badge-danger">2</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_select2.html" class="nav-link ">
-                            <span class="title">Select2 Dropdowns</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_bootstrap_select.html" class="nav-link ">
-                            <span class="title">Bootstrap Select</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_multi_select.html" class="nav-link ">
-                            <span class="title">Multi Select</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_bootstrap_select_splitter.html" class="nav-link ">
-                            <span class="title">Select Splitter</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_typeahead.html" class="nav-link ">
-                            <span class="title">Typeahead Autocomplete</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_bootstrap_tagsinput.html" class="nav-link ">
-                            <span class="title">Bootstrap Tagsinput</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_bootstrap_switch.html" class="nav-link ">
-                            <span class="title">Bootstrap Switch</span>
-                            <span class="badge badge-success">6</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_bootstrap_maxlength.html" class="nav-link ">
-                            <span class="title">Bootstrap Maxlength</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_bootstrap_fileinput.html" class="nav-link ">
-                            <span class="title">Bootstrap File Input</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_bootstrap_touchspin.html" class="nav-link ">
-                            <span class="title">Bootstrap Touchspin</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_form_tools.html" class="nav-link ">
-                            <span class="title">Form Widgets & Tools</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_context_menu.html" class="nav-link ">
-                            <span class="title">Context Menu</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_editors.html" class="nav-link ">
-                            <span class="title">Markdown & WYSIWYG Editors</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_code_editors.html" class="nav-link ">
-                            <span class="title">Code Editors</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_ion_sliders.html" class="nav-link ">
-                            <span class="title">Ion Range Sliders</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_noui_sliders.html" class="nav-link ">
-                            <span class="title">NoUI Range Sliders</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="components_knob_dials.html" class="nav-link ">
-                            <span class="title">Knob Circle Dials</span>
+                        <a href="{{route('benhvien.create')}}" class="nav-link ">
+                            <span class="title">Thêm bệnh viện mới</span>
                         </a>
                     </li>
                 </ul>
@@ -252,77 +52,20 @@
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-settings"></i>
-                    <span class="title">Form Stuff</span>
+                    <span class="title">Chuyên khoa</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="form_controls.html" class="nav-link ">
-                            <span class="title">Bootstrap Form
-                                    <br>Controls</span>
+                        <a href="{{route('chuyenkhoa.index')}}" class="nav-link ">
+                            <span class="title">Bảng chuyên khoa
+                            </span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="form_controls_md.html" class="nav-link ">
-                            <span class="title">Material Design
-                                    <br>Form Controls</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="form_validation.html" class="nav-link ">
-                            <span class="title">Form Validation</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="form_validation_states_md.html" class="nav-link ">
-                            <span class="title">Material Design
-                                    <br>Form Validation States</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="form_validation_md.html" class="nav-link ">
-                            <span class="title">Material Design
-                                    <br>Form Validation</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="form_layouts.html" class="nav-link ">
-                            <span class="title">Form Layouts</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="form_input_mask.html" class="nav-link ">
-                            <span class="title">Form Input Mask</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="form_editable.html" class="nav-link ">
-                            <span class="title">Form X-editable</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="form_wizard.html" class="nav-link ">
-                            <span class="title">Form Wizard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="form_icheck.html" class="nav-link ">
-                            <span class="title">iCheck Controls</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="form_image_crop.html" class="nav-link ">
-                            <span class="title">Image Cropping</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="form_fileupload.html" class="nav-link ">
-                            <span class="title">Multiple File Upload</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="form_dropzone.html" class="nav-link ">
-                            <span class="title">Dropzone File Upload</span>
+                        <a href="{{route('chuyenkhoa.create')}}" class="nav-link ">
+                            <span class="title">Thêm chuyên khoa mới
+                            </span>
                         </a>
                     </li>
                 </ul>
@@ -412,33 +155,18 @@
             <li class="nav-item  ">
                 <a href="?p=" class="nav-link nav-toggle">
                     <i class="icon-wallet"></i>
-                    <span class="title">Portlets</span>
+                    <span class="title">Khung giờ</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="portlet_boxed.html" class="nav-link ">
-                            <span class="title">Boxed Portlets</span>
+                        <a href="{{route('khunggio.index')}}" class="nav-link ">
+                            <span class="title">Bảng khung giờ</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="portlet_light.html" class="nav-link ">
-                            <span class="title">Light Portlets</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="portlet_solid.html" class="nav-link ">
-                            <span class="title">Solid Portlets</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="portlet_ajax.html" class="nav-link ">
-                            <span class="title">Ajax Portlets</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="portlet_draggable.html" class="nav-link ">
-                            <span class="title">Draggable Portlets</span>
+                        <a href="{{route('khunggio.create')}}" class="nav-link ">
+                            <span class="title">Thêm khung giờ khám mới</span>
                         </a>
                     </li>
                 </ul>
@@ -446,56 +174,19 @@
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-bar-chart"></i>
-                    <span class="title">Charts</span>
+                    <span class="title">Bệnh nhân</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="charts_amcharts.html" class="nav-link ">
-                            <span class="title">amChart</span>
+                        <a href="{{route('benhnhan.index')}}" class="nav-link ">
+                            <span class="title">Bảng bệnh nhân</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="charts_flotcharts.html" class="nav-link ">
-                            <span class="title">Flot Charts</span>
+                        <a href="{{route('benhnhan.create')}}" class="nav-link ">
+                            <span class="title">Thêm bệnh nhân mới</span>
                         </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="charts_flowchart.html" class="nav-link ">
-                            <span class="title">Flow Charts</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="charts_google.html" class="nav-link ">
-                            <span class="title">Google Charts</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="charts_echarts.html" class="nav-link ">
-                            <span class="title">eCharts</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="charts_morris.html" class="nav-link ">
-                            <span class="title">Morris Charts</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="javascript:;" class="nav-link nav-toggle">
-                            <span class="title">HighCharts</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item ">
-                                <a href="charts_highcharts.html" class="nav-link "> HighCharts </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="charts_highstock.html" class="nav-link "> HighStock </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="charts_highmaps.html" class="nav-link "> HighMaps </a>
-                            </li>
-                        </ul>
                     </li>
                 </ul>
             </li>

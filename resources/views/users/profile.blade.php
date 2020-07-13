@@ -1,9 +1,11 @@
 @extends('pages.layout.layouts')
-
+@section('title')
+User Profile
+@endsection
 @section('content')
     <head>
         <meta charset="utf-8" />
-        <title>Metronic | New User Profile | Account</title>
+        <title></title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />

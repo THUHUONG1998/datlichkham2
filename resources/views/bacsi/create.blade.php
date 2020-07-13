@@ -1,9 +1,11 @@
 @extends('pages.layout.layouts')
-
+@section('title')
+Thêm bác sĩ mới 
+@endsection
 @section('content')
 <div class="page-content-wrapper">
-<div class="page-content">
-<section class="content-header">
+  <div class="page-content">
+    <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -20,25 +22,25 @@
       </div><!-- /.container-fluid -->
     </section>
     @if (count($errors) > 0)
-  <div class="alert alert-danger">
-    <ul>
-       @foreach ($errors->all() as $error)
-         <li>{{ $error }}</li>
-       @endforeach
-    </ul>
-  </div>
-@endif
-<!-- goi session bao loi -->
-@if($mess=Session::get('error'))
-<div class="alert alert-danger">
-<li>{{ $mess }}</li>
-</div>
-@endif
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+    @endif
+    <!-- goi session bao loi -->
+    @if($mess=Session::get('error'))
+    <div class="alert alert-danger">
+      <li>{{ $mess }}</li>
+    </div>
+    @endif
 
     <section class="content">
       <div class="container-fluid">
-      <div class="row">
-      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
@@ -49,7 +51,7 @@
               <form role="form" action="{{route('bacsi.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
-                 <div class="form-group">
+                  <div class="form-group">
                     <label for="exampleName">Bác Sĩ</label>
                     <input type="text" class="form-control" id="tenbacsi" placeholder="Tên bác sĩ" name="tenbacsi" value="{{old('tenbacsi')}}">
                   </div>
@@ -62,28 +64,28 @@
                     <select name="id_benhvien" class="browser-default custom-select">
                       <option value="">--Chọn bệnh viện--</option>
                       @foreach($benhvien as $value)
-                        <option value="{{$value->id}}" >{{$value->tenbenhvien}}</option>  
+                      <option value="{{$value->id}}">{{$value->tenbenhvien}}</option>
                       @endforeach
                     </select>
                   </div>
-                <!-- /.card-body -->
-                <div class="form-group">
+                  <!-- /.card-body -->
+                  <div class="form-group">
                     <label for="exampleInputEmail1">Chuyên Khoa</label>
                     <select name="id_chuyenkhoa" class="browser-default custom-select">
                       <option value="">--Chọn chuyên khoa--</option>
                     </select>
                   </div>
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
               </form>
             </div>
             <!-- /.card -->
           </div>
-         
+
         </div>
       </div>
     </section>
-    </div>
+  </div>
 </div>
 @endsection

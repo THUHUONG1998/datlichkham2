@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\DB;
 
 class chuyenkhoaController extends Controller
 {
+    // function __construct()
+    // {
+    //      $this->middleware('permission:ck-list|ck-create|ck-edit|ck-delete', ['only' => ['index','store']]);
+    //      $this->middleware('permission:ck-create', ['only' => ['create','store']]);
+    //      $this->middleware('permission:ck-edit', ['only' => ['edit','update']]);
+    //      $this->middleware('permission:ck-delete', ['only' => ['destroy']]);
+    // }
     public function index(Request $request)
     {
         // code phan trang
@@ -36,6 +43,7 @@ class chuyenkhoaController extends Controller
 
         [
             'tenchuyenkhoa' => 'Tên chuyên khoa',
+            'id_benhvien' => 'Tên bệnh viện',
         ]);
 
         
@@ -75,6 +83,16 @@ class chuyenkhoaController extends Controller
         $this->validate($request, [
             'tenchuyenkhoa' => 'required',
             'id_benhvien' => 'required',
+            // 'gioihanluongdat' => ''
+        ],
+
+        [
+            'required' => ':attribute không được bỏ trống'
+        ],
+
+        [
+            'tenchuyenkhoa' => 'Tên chuyên khoa',
+            'id_benhvien' => 'Tên bệnh viện',
         ]);
 
 

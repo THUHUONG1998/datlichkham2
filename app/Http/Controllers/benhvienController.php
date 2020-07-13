@@ -7,6 +7,13 @@ use App\benhvien;
 
 class benhvienController extends Controller
 {
+    // function __construct()
+    // {
+    //      $this->middleware('permission:bv-list|bv-create|bv-edit|bv-delete', ['only' => ['index','store']]);
+    //      $this->middleware('permission:bv-create', ['only' => ['create','store']]);
+    //      $this->middleware('permission:bv-edit', ['only' => ['edit','update']]);
+    //      $this->middleware('permission:bv-delete', ['only' => ['destroy']]);
+    // }
     public function index(Request $request)
     {
         // code phan trang
@@ -23,6 +30,14 @@ class benhvienController extends Controller
         request()->validate([
             'tenbenhvien' => 'required',
             'diachi' => 'required',
+        ],
+
+        [
+            'required' => ':attribute không được bỏ trống'
+        ],
+        [
+            'tenbenhvien' => 'Tên bệnh viện',
+            'diachi' => 'Địa chỉ bệnh viện',
         ]);
 
 
@@ -55,6 +70,14 @@ class benhvienController extends Controller
         $this->validate($request, [
             'tenbenhvien' => 'required',
             'diachi' => 'required',
+        ],
+
+        [
+            'required' => ':attribute không được bỏ trống'
+        ],
+        [
+            'tenbenhvien' => 'Tên bệnh viện',
+            'diachi' => 'Địa chỉ'
         ]);
 
         $benhvien = benhvien::find($id);

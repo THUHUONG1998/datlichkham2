@@ -1,6 +1,8 @@
 
 @extends('pages.layout.layouts')
-
+@section('title')
+Bảng bác sĩ
+@endsection
 @section('content')
 <!-- BEGIN CONTAINER -->
 
@@ -31,7 +33,7 @@
                             <i class="fa fa-circle"></i>
                         </li>
                         <li>
-                            <span class="active">Users Tables</span>
+                            <span class="active">Doctor Tables</span>
                         </li>
                     </ul>
                     <!-- END PAGE BREADCRUMB -->

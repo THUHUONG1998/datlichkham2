@@ -1,5 +1,7 @@
 @extends('pages.layout.layouts')
-
+@section('title')
+Tạo người dùng mới
+@endsection
 @section('content')
 <div class="page-content-wrapper">
 <div class="page-content">
@@ -64,18 +66,27 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email" value="{{old('email')}}">
+                    @error('email')
+                        <p style="color: red;"><i><b>{{$message}}</b></i></p>
+                    @enderror
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                    @error('password')
+                        <p style="color: red;"><i><b>{{$message}}</b></i></p>
+                    @enderror
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Confirm Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="confirmPassword" name="confirm-password">
                   </div>
                   <div class="form-group">
-                    <label for="exampleDanhso">Danh số</label>
-                    <input type="text" class="form-control" id="danhso" placeholder="" name="manhanvien" value="{{old('manhanvien')}}">
+                    <label for="exampleDanhso">Mã nhân viên</label>
+                    <input type="text" class="form-control" id="manhanvien" placeholder="" name="manhanvien" value="{{old('manhanvien')}}">
+                    @error('manhanvien')
+                        <p style="color: red;"><i><b>{{$message}}</b></i></p>
+                    @enderror
                   </div>
                   <div class="form-group">
                     <label for="exampleInputFile">Input avatar</label>

@@ -1,4 +1,7 @@
 @extends('pages.layout.layouts')
+@section('title')
+Bảng User
+@endsection
 @section('content')
         <div class="page-content-wrapper">
             <div class="page-content">
@@ -74,6 +77,7 @@
                                                 <th>Name</th>
                                                 <th>Avatar</th>
                                                 <th>Email</th>
+                                                <th>Mã nhân viên</th>
                                                 <th>Roles</th>
                                                 <th width="280px">Action</th>
                                             </tr>
@@ -85,6 +89,7 @@
                                                 <td>{{ $user->username }}</td>
                                                 <td><img src="{{$user->avatar}}" width="50px" class="img-circle"></td>
                                                 <td>{{ $user->email }}</td>
+                                                <td>{{$user->manhanvien}}</td>
                                                 <td>
                                                   @if(!empty($user->getRoleNames()))
                                                     @foreach($user->getRoleNames() as $v)
@@ -97,12 +102,12 @@
                                                 
                                                     <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
                                                   
-                                                        <button class="btn btn-danger" data-userid= {{$user->id}} data-toggle="modal" data-target="#myModal{{ $i}}">Delete</button>
+                                                        <!-- <button class="btn btn-danger" data-userid= {{$user->id}} data-toggle="modal" data-target="#myModal{{ $i}}">Delete</button> -->
                                                   
                                                   
-                                                    <!-- {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
+                                                    {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
                                                         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                                                    {!! Form::close() !!} -->
+                                                    {!! Form::close() !!}
                                                 </td>
                                             </tr>
                                             @endforeach

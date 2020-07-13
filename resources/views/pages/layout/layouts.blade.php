@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Metronic | Dashboard</title>
+    <title>@yield('title')</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="" name="description" />
@@ -25,6 +25,8 @@
     <link href="assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
     <link href="assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS -->
+    <link href="assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" type="text/css" />
+    
     <!-- BEGIN THEME GLOBAL STYLES -->
     <link href="assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
     <link href="assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
@@ -34,7 +36,7 @@
     <link href="assets/layouts/layout4/css/themes/light.min.css" rel="stylesheet" type="text/css" id="style_color" />
     <link href="assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
     <!-- END THEME LAYOUT STYLES -->
-    <link rel="shortcut icon" href="favicon.ico" />
+<link rel="shortcut icon" href="favicon.ico" />
 </head>
 <!-- END HEAD -->
 <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
@@ -86,9 +88,14 @@
     <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
     <script src="assets/pages/scripts/profile.min.js" type="text/javascript"></script>
     <!-- END THEME GLOBAL SCRIPTS -->
+    <!-- font icon -->
+   
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL SCRIPTS -->
+    <script src="assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
     <!-- BEGIN THEME LAYOUT SCRIPTS -->
     <script src="assets/layouts/layout4/scripts/layout.min.js" type="text/javascript"></script>
     <script src="assets/layouts/layout4/scripts/demo.min.js" type="text/javascript"></script>
@@ -183,6 +190,109 @@
         });
     });
 </script>
+<script type="text/javascript">
+    var urlck = "{{route('show-chuyenkhoabn')}}";
+    $("select[name='id_benhvien']").change(function(){
+        var id_benhvien = $(this).val();
+        var token = $("input[name='_token']").val();
+        $.ajax({
+            url: urlck,
+            method: 'POST',
+            data: {
+                id_benhvien: id_benhvien,
+                _token: token
+            },
+            success: function(data) {
+                $("select[name='id_chuyenkhoa'").html('');
+                $.each(data, function(key, value){
+                    $("select[name='id_chuyenkhoa']").append(
+                        "<option value=" + value.id + ">" + value.tenchuyenkhoa + "</option>"
+                    );
+                });
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    var urlbs = "{{route('show-bacsi')}}";
+    $("select[name='id_benhvien']").change(function(){
+        var id_benhvien = $(this).val();
+        var token = $("input[name='_token']").val();
+        $.ajax({
+            url: urlbs,
+            method: 'POST',
+            data: {
+                id_benhvien: id_benhvien,
+                _token: token
+            },
+            success: function(data) {
+                $("select[name='id_bacsi'").html('');
+                $.each(data, function(key, value){
+                    $("select[name='id_bacsi']").append(
+                        "<option value=" + value.id + ">" + value.tenbacsi + "</option>"
+                    );
+                });
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    var urlkg = "{{route('show-khunggio')}}";
+    $("select[name='id_benhvien']").change(function(){
+        var id_benhvien = $(this).val();
+        var token = $("input[name='_token']").val();
+        $.ajax({
+            url: urlkg,
+            method: 'POST',
+            data: {
+                id_benhvien: id_benhvien,
+                _token: token
+            },
+            success: function(data) {
+                $("select[name='id_khunggio'").html('');
+                $.each(data, function(key, value){
+                    $("select[name='id_khunggio']").append(
+                        "<option value=" + value.id + ">" + value.khunggio + "</option>"
+                    );
+                });
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+$('[data-toggle="datepicker"]').datepicker({
+    format:"dd-mm-yyyy",
+    minDate:0,
+    endDate:'+0d',
+    todayBtn:"linked",
+    todayHighlight:true,
+    orientation:"left",
+    autoclose:true,
+    beforeShowDay: function(d)
+    {
+      var day = d.getDay();
+      return [(day!=0)];
+    },
+  });
+  </script>
+  <script type="text/javascript">
+$('#ngaykham').datepicker({
+    format:"dd-mm-yyyy",
+    minDate:0,
+    startDate:'+0d',
+    todayBtn:"linked",
+    todayHighlight:true,
+    orientation:"left",
+    autoclose:true,
+    daysOfWeekDisabled:[0],
+    beforeShowDay: function(d)
+    {
+      var day = d.getDay();
+      return [(day!=0)];
+    },
+  });
+  </script>
+
   @show
 </body>
 </html>

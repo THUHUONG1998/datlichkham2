@@ -8,7 +8,7 @@ class benhnhan extends Model
 {
     protected $table = 'benhnhan';
      public $timestamp = false;
-     protected $fillable=['hovaten','ngaysinh','gioitinh','ngaykham','sodienthoai','diachi','id_benhvien','id_bacsi','id_chuyenkhoa','id_user','id_khunggio'];
+     protected $fillable=['hovaten','ngaysinh','gioitinh','email','ngaykham','sodienthoai','diachi','id_benhvien','id_bacsi','id_chuyenkhoa','id_user','id_khunggio'];
      public function bacsi(){
          return $this->belongsTo('App\bacsi', 'id_bacsi', 'id');
      }

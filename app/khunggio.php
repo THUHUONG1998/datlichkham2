@@ -8,6 +8,7 @@ class khunggio extends Model
 {
     protected $table = 'khunggio';
     public $timestamp = false;
+    protected $dates =['ngaysinh','ngaykham'];
     protected $fillable = [
         'khunggio', 'id_benhvien', 'gioihanluongdat'
     ];

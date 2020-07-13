@@ -1,7 +1,10 @@
 @extends('pages.layout.layouts')
-
-
+@section('title')
+Chỉnh sửa thông tin khung giờ
+@endsection
 @section('content')
+<div class="page-content-wrapper">
+    <div class="page-content">
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
@@ -30,7 +33,7 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong> Tên chuyên khoa</strong>
+            <strong> Tên khung giờ</strong>
             {!! Form::text('khunggio', null, array('placeholder' => 'Khung giờ','class' => 'form-control')) !!}
         </div>
     </div>
@@ -40,9 +43,15 @@
             <br/>
             <select name="id_benhvien" class="browser-default custom-select">
                 @foreach($benhvien as $value)
-                <option value="{{$value->id}}" >{{$value->tenbenhvien}}</option>  
+                <option value="{{$value->id}}" {{($khunggio->id_benhvien == $value->id) ? 'selected' :'' }} >{{$value->tenbenhvien}}</option>  
                 @endforeach
             </select>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="form-group">
+            <strong> Giới hạn lượt đặt</strong>
+            {!! Form::text('gioihanluongdat', null, array('placeholder' => 'Số lượng','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -50,6 +59,7 @@
     </div>
 </div>
 {!! Form::close() !!}
-
+</div>
+</div>
 
 @endsection

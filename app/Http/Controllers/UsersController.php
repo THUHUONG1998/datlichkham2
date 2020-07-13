@@ -63,7 +63,14 @@ class UsersController extends Controller
             'username' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
+            'manhanvien' => 'unique:users,manhanvien',
          //  'roles' => 'required'
+        ],
+        [
+            'required' => ':attribute không được bỏ trống',
+        ],
+        [
+            'username' => 'Tên người dùng',
         ]);
 
 
@@ -144,7 +151,15 @@ class UsersController extends Controller
             'username' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'same:confirm-password',
+            'manhanvien' => 'unique:users,manhanvien',
            // 'roles' => 'required'
+        ],
+        [
+            'required' => ':attribute không được bỏ trống',
+        ],
+        [
+            'username' => 'Tên người dùng',
+            'email' => 'Địa chỉ email',
         ]);
 
 
@@ -215,4 +230,8 @@ class UsersController extends Controller
         }
         return response()->json($imageName);
     }
+    public function tabpane()
+{
+    return view('try.tabpane');
+}
 }
