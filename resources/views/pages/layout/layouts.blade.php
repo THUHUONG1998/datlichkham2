@@ -288,7 +288,7 @@ $('#ngaykham').datepicker({
     beforeShowDay: function(d)
     {
       var day = d.getDay();
-      return [(day!=0)];
+      return [(day!=0)]; //khong lay chu nhat
     },
   });
   </script>

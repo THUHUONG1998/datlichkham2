@@ -44,6 +44,7 @@ Route::group(['prefix'=>'admin'], function() {
         Route::get('export-bacsi', 'MyController@exportBS')->name('exportBS');
         Route::get('importExportView', 'MyController@importExportView');
         Route::post('import', 'MyController@import')->name('import');
+        Route::post('import-bacsi', 'MyController@importBS')->name('importBS');
         Route::post('showchuyenkhoa','bacsiController@showChuyenKhoainBenhVien')->name('show-chuyenkhoa');
         Route::post('showchuyenkhoabn','benhnhanController@showChuyenKhoainBenhNhan')->name('show-chuyenkhoabn');
         Route::post('showbacsi','benhnhanController@showBacSiinBenhNhan')->name('show-bacsi');

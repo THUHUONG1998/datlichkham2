@@ -65,7 +65,7 @@ class benhnhanController extends Controller
     public function showKhungGioinBenhNhan(Request $request)
     {
         if ($request->ajax()) {
-            $khunggio = khunggio::where('id_benhvien', $request->id_benhvien)->select('id', 'khunggio')->get();
+            $khunggio = khunggio::where('id_benhvien', $request->id_benhvien)->select('id', 'khunggio', 'gioihanluongdat')->get();
             return response()->json($khunggio);
         }
     }

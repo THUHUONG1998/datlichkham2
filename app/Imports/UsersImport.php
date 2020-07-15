@@ -6,8 +6,10 @@ use App\User;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Imports\HeadingRowFormatter;
+use Maatwebsite\Excel\Concerns\WithMultipleSheets;
+use Maatwebsite\Excel\Concerns\WithStartRow;
 HeadingRowFormatter::default('none');
-class UsersImport implements ToModel
+class UsersImport implements ToModel, WithMultipleSheets, WithStartRow 
 {
     /**
     * @param array $row
@@ -29,8 +31,16 @@ class UsersImport implements ToModel
         ]);
         
     }
-    public function headingRow(): int
+    
+    public function sheets(): array
     {
-        return 6;
+        return [
+            0 => new UsersImport(),
+        ];
+    }
+
+    public function startRow(): int
+    {
+        return 2;
     }
 }

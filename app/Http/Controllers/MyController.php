@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use App\Exports\UsersExport;
 use App\Imports\UsersImport;
 use App\Exports\BacsiExport;
+use App\Imports\BacsiImport;
+use Illuminate\Support\Facades\Config;
 use Maatwebsite\Excel\Facades\Excel;
-use App\bacsi;
+
   
 class MyController extends Controller
 {
@@ -38,9 +40,17 @@ class MyController extends Controller
     /**
     * @return \Illuminate\Support\Collection
     */
-    public function import() 
+    public function import()
     {
+        Config::set(['excel.import.startRow', 2]);
         Excel::import(new UsersImport,request()->file('file'));
+           
+        return back();
+    }
+    public function importBS()
+    {
+        Config::set(['excel.import.startRow', 2]);
+        Excel::import(new BacsiImport,request()->file('file'));
            
         return back();
     }

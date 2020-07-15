@@ -57,6 +57,7 @@ Bảng bác sĩ
                                         <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
                                             <i class="icon-trash"></i>
                                         </a>
+                                        <button class="btn btn-danger"  data-toggle="modal" data-target="#importBS">Import</button>
                                         <button class="btn btn-warning"  data-toggle="modal" data-target="#exportBS">Export</button>
                                     </div>
                                 </div>
@@ -125,6 +126,7 @@ Bảng bác sĩ
                             <!-- END SAMPLE TABLE PORTLET-->
                         </div>
                     </div>
+                    {!! $bacsi->links() !!}
                   
                         
                             <!-- END SAMPLE TABLE PORTLET-->
@@ -157,4 +159,22 @@ Bảng bác sĩ
                 </div>
             </div>
         </div>
+        <div class="modal modal-danger fade" id="importBS" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+                        <h4 class="modal-title text-center" id="myModalLabel">Thông báo</h4>
+                    </div>
+                    <form action="{{ route('importBS') }}" method="POST" enctype="multipart/form-data">
+                    <!-- {{method_field('delete')}} -->
+                    {{csrf_field()}}
+                        <input type="file" name="file" class="form-control">
+                        <div class="modal-footer">
+                            <button class="btn btn-success">Import Doctor Data</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
 @endsection
